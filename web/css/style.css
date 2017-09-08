@@ -1,3 +1,8 @@
 td, th {
   text-align: center;
 }
+.create-flight {
+  margin-bottom: 40px; }
+.manage-flight {
+  margin: 40px 0;
+}

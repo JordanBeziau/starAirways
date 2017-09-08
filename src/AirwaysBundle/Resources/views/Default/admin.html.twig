@@ -1,9 +1,9 @@
 {% extends "base.html.twig" %}
 {% block body %}
   <div class="container">
-    <h2>🛩 Créer un nouveau vol</h2>
+    <h2 class="create-flight">🛩 Créer un nouveau vol</h2>
     <hr>
-    <h3>🛫 Gérer les vols programmés</h3>
+    <h2 class="manage-flight">🛫 Gérer les vols programmés</h2>
     <table class="table">
       <thead class="thead-inverse">
       <tr>
@@ -15,27 +15,15 @@
       </tr>
       </thead>
       <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>Éditer</td>
-        <td>Supprimer</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>Éditer</td>
-        <td>Supprimer</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>Éditer</td>
-        <td>Supprimer</td>
-      </tr>
+      {% for flight in flightList %}
+        <tr>
+          <th scope="row">{{ flight.flightCode }}</th>
+          <td>{{ flight.departure }} / {{ flight.arrival }}</td>
+          <td>{{ flight.time | date('H:i') }}</td>
+          <td><a href="" class="btn btn-primary">Éditer</a></td>
+          <td><a href="" class="btn btn-danger">Supprimer</a></td>
+        </tr>
+      {% endfor %}
       </tbody>
     </table>
   </div>
