@@ -11,35 +11,36 @@
         <th style="background: cornflowerblue;">Heure</th>
         <th style="background: cornflowerblue;">Places</th>
         <th style="background: cornflowerblue;">Prix</th>
-        <th style="background: cornflowerblue;">ℹ️</th>
+        <th style="background: cornflowerblue;">ℹ️ Promo️</th>
         <th style="background: cornflowerblue;">⚠️</th>
       </tr>
       </thead>
       <tbody>
-      <tr>
-        <td>F9387</td>
-        <td>Paris</td>
-        <td>Londres</td>
-        <td>00:00:00</td>
-        <td>20</td>
-        <td>130</td>
-        <td>PROMO</td>
-        <td>COMPLET</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>Éditer</td>
-        <td>Supprimer</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>Éditer</td>
-        <td>Supprimer</td>
-      </tr>
+      {% for flight in flightList %}
+        <tr>
+          <td>{{ flight.flightCode }}</td>
+          <td>{{ flight.departure }}</td>
+          <td>{{ flight.arrival }}</td>
+          <td>{{ flight.time | date('H:i') }}</td>
+          <td>{{ flight.seat }}</td>
+          <td>
+            <span {% if flight.information %}style="color: indianred;"{% endif %}>{{ flight.price }}</span>
+          </td>
+          <td>
+            {% if flight.information %}
+              <span style="color: seagreen">{{ flight.price * 0.95 }}</span>
+            {% endif %}
+          </td>
+          <td>
+            {% if flight.seat == 0 %}
+              <span style="color: indianred">COMPLET</span>
+            {% elseif flight.seat > 0 and flight.seat < 100 %}
+              <span>{{ flight.seat }} place{% if flight.seat != 1 %}s{% endif %}</span>
+            {% else %}
+            {% endif %}
+          </td>
+        </tr>
+      {% endfor %}
       </tbody>
     </table>
   </div>

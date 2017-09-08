@@ -68,7 +68,7 @@ class Flight
      *
      * @ORM\Column(name="information", type="boolean")
      */
-    private $information;
+    private $information = false;
 
     /**
      * @var bool

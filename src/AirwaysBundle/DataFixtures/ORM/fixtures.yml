@@ -1,0 +1,10 @@
+AirwaysBundle\Entity\Flight:
+  flight_{1..200}:
+    flight_code: "<regexify('[A-Z][0-1][0-9][0-9][0-9][0-9]')>"
+    departure: "<city()>"
+    arrival: "<city()>"
+    time: "<datetime()>"
+    seat: "<numberBetween($min = 0, $max = 100)>"
+    price: "<numberBetween($min = 100, $max = 300)>"
+    information: "<boolean()>"
+    alert: "<boolean()>"
