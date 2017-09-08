@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="@127.0.0.1">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+    <root id="1"/>
+    <schema id="2" parent="1" name="db_artistes">
+      <Current>1</Current>
+    </schema>
+    <schema id="3" parent="1" name="db_artistes_innodb"/>
+    <schema id="4" parent="1" name="db_blog"/>
+    <schema id="5" parent="1" name="db_concerts"/>
+    <schema id="6" parent="1" name="db_conferences"/>
+    <schema id="7" parent="1" name="db_drupal"/>
+    <schema id="8" parent="1" name="db_musiciens"/>
+    <schema id="9" parent="1" name="db_MVC_contacts"/>
+    <schema id="10" parent="1" name="db_test_secure"/>
+    <schema id="11" parent="1" name="information_schema"/>
+    <schema id="12" parent="1" name="mysql"/>
+    <schema id="13" parent="1" name="performance_schema"/>
+    <schema id="14" parent="1" name="simplepost"/>
+    <schema id="15" parent="1" name="star_airways">
+      <Visible>1</Visible>
+    </schema>
+    <schema id="16" parent="1" name="todolist"/>
+    <schema id="17" parent="1" name="weebooks"/>
+    <table id="18" parent="15" name="flight"/>
+    <table id="19" parent="15" name="migration_versions"/>
+    <column id="20" parent="18" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="21" parent="18" name="flight_code">
+      <Position>2</Position>
+      <DataType>varchar(5)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="22" parent="18" name="departure">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="18" name="arrival">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="18" name="time">
+      <Position>5</Position>
+      <DataType>time|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="25" parent="18" name="seat">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="18" name="price">
+      <Position>7</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="18" name="information">
+      <Position>8</Position>
+      <DataType>tinyint(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="18" name="alert">
+      <Position>9</Position>
+      <DataType>tinyint(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="29" parent="18" name="UNIQ_C257E60EF62B6DFF">
+      <ColNames>flight_code</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="30" parent="18" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="31" parent="18" name="UNIQ_C257E60EF62B6DFF">
+      <ColNames>flight_code</ColNames>
+      <UnderlyingIndexName>UNIQ_C257E60EF62B6DFF</UnderlyingIndexName>
+    </key>
+    <column id="32" parent="19" name="version">
+      <Position>1</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="33" parent="19" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>version</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
