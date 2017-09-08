@@ -9,7 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 
-class AirwaysType extends AbstractType {
+class CreateType extends AbstractType {
   public function buildForm(FormBuilderInterface $builder, array $options) {
     $builder
       ->add("time", DateTimeType::class,

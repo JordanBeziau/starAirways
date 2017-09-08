@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8acf99ef-7e8a-4206-b14a-3558c1ce1eaa" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AirwaysBundle/Form/AirwaysType.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AirwaysBundle/Form/AirwaysType.php" afterPath="$PROJECT_DIR$/src/AirwaysBundle/Form/CreateType.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Aries/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../Aries/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Aries/mySymfony/simplepost/src/BlogBundle/DataFixtures/ORM/loadArticleFixtures.php" afterPath="$PROJECT_DIR$/../../Aries/mySymfony/simplepost/src/BlogBundle/DataFixtures/ORM/loadArticleFixtures.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AirwaysBundle/Controller/AirwaysController.php" afterPath="$PROJECT_DIR$/src/AirwaysBundle/Controller/AirwaysController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AirwaysBundle/Resources/views/Default/admin.html.twig" afterPath="$PROJECT_DIR$/src/AirwaysBundle/Resources/views/Default/admin.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/style.css" afterPath="$PROJECT_DIR$/web/css/style.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -127,11 +123,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AirwaysType.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AirwaysBundle/Form/AirwaysType.php">
+      <file leaf-file-name="CreateType.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AirwaysBundle/Form/CreateType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="27" column="18" lean-forward="false" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+            <state relative-caret-position="200">
+              <caret line="11" column="12" lean-forward="false" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
               <folding>
                 <element signature="e#38#78#0#PHP" expanded="true" />
               </folding>
@@ -149,14 +145,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AirwaysController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AirwaysController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AirwaysBundle/Controller/AirwaysController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
+            <state relative-caret-position="211">
               <caret line="44" column="52" lean-forward="false" selection-start-line="44" selection-start-column="52" selection-end-line="44" selection-end-column="52" />
               <folding>
                 <element signature="e#44#76#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AirwaysBundle/Resources/views/Default/edit.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -207,8 +213,9 @@
         <option value="$PROJECT_DIR$/src/AirwaysBundle/Resources/views/Default/index.html.twig" />
         <option value="$PROJECT_DIR$/src/AirwaysBundle/Resources/views/Default/admin.html.twig" />
         <option value="$PROJECT_DIR$/web/css/style.css" />
-        <option value="$PROJECT_DIR$/src/AirwaysBundle/Form/AirwaysType.php" />
         <option value="$PROJECT_DIR$/src/AirwaysBundle/Controller/AirwaysController.php" />
+        <option value="$PROJECT_DIR$/src/AirwaysBundle/Form/AirwaysType.php" />
+        <option value="$PROJECT_DIR$/src/AirwaysBundle/Form/EditType.php" />
       </list>
     </option>
   </component>
@@ -778,12 +785,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1504696709127</updated>
-      <workItem from="1504696710289" duration="33367000" />
+      <workItem from="1504696710289" duration="33654000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33367000" />
+    <option name="totallyTimeSpent" value="33654000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -1095,22 +1102,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AirwaysBundle/Form/AirwaysType.php">
+    <entry file="file://$PROJECT_DIR$/src/AirwaysBundle/Controller/AirwaysController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="27" column="18" lean-forward="false" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+        <state relative-caret-position="211">
+          <caret line="44" column="52" lean-forward="false" selection-start-line="44" selection-start-column="52" selection-end-line="44" selection-end-column="52" />
           <folding>
-            <element signature="e#38#78#0#PHP" expanded="true" />
+            <element signature="e#44#76#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AirwaysBundle/Controller/AirwaysController.php">
+    <entry file="file://$PROJECT_DIR$/src/AirwaysBundle/Resources/views/Default/edit.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="44" column="52" lean-forward="false" selection-start-line="44" selection-start-column="52" selection-end-line="44" selection-end-column="52" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AirwaysBundle/Form/CreateType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="11" column="12" lean-forward="false" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
           <folding>
-            <element signature="e#44#76#0#PHP" expanded="true" />
+            <element signature="e#38#78#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
