@@ -20,8 +20,14 @@
           <th scope="row">{{ flight.flightCode }}</th>
           <td>{{ flight.departure }} / {{ flight.arrival }}</td>
           <td>{{ flight.time | date('H:i') }}</td>
-          <td><a href="" class="btn btn-primary">Éditer</a></td>
-          <td><a href="" class="btn btn-danger">Supprimer</a></td>
+          <td><a href="{{ path('edit', { 'id': flight.id }) }}" class="btn btn-primary">Éditer</a></td>
+          <td>
+            <form action="{{ path('remove') }}" method="post">
+              <input type="hidden" name="id" value="{{ flight.id }}">
+              <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+              <button class="btn btn-danger" type="submit">Supprimer</button>
+            </form>
+          </td>
         </tr>
       {% endfor %}
       </tbody>

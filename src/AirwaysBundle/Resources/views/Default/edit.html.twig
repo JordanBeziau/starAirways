@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+{% block body %}
+  <div class="container">
+    <h2 class="row edit-title">✈️ Édition du vol n°{{ flight.flightCode }}</h2>
+    {% for message in app.flashes("success") %}
+      <div class="row">
+        <span class="alert alert-success">
+          ✅ {{ message }}
+        </span>
+      </div>
+    {% endfor %}
+    <div class="row">
+      {{ form_start(form) }}
+      {{ form_row(form.time, {"label" : "Horaire"}) }}
+      {{ form_row(form.seat, {"label" : "Nombre de places"}) }}
+      {{ form_row(form.price, {"label" : "Prix"}) }}
+      <div class="form-control" {% if flight.information %}style="color: seagreen;{% endif %}">
+        {{ flight.price * 0.95 }}
+      </div>
+      {{ form_row(form.information, { "label" : "Réduction de 5%" }) }}
+      {{ form_row(form.Submit, { "attr" : { "class" : "btn btn-primary" } }) }}
+      {{ form_end(form) }}
+    </div>
+  </div>
+{% endblock %}

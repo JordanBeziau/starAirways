@@ -1,7 +1,11 @@
 <nav class="navbar navbar-light" style="background: cornflowerblue;">
   <div class="container">
     <a class="navbar-brand" href="{{ path('home') }}" style="color: white">Star Airways</a>
-    <a href="{{ path('admin') }}" style="color: white">Admin</a>
+    {% if app.request.attributes.get("_route") == "home" %}
+      <a href="{{ path('admin') }}" style="color: white">🕵️‍ Admin</a>
+    {% else %}
+      <a href="{{ path('home') }}" style="color: white">❌ Quitter</a>
+    {% endif %}
   </div>
 </nav>
 <div class="row-fluid" style="height: 300px;overflow: hidden;margin-bottom: 40px">
