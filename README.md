@@ -2,6 +2,7 @@ star-airways
 ============
 
 * Clone or download .zip folder
+* ```composer install```
 * Set parameters.yml up to your database
 * Create database : ```php bin/console doctrine:database:create```
 * Migrate entities :
