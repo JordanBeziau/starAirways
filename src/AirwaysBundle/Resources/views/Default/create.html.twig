@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+  <div class="container">
+    <h1>🛩 Nouveau vol :</h1>
+    {{ form_start(form) }}
+    {{ form_row(form.time, { "label": "Horaire" }) }}
+    {{ form_row(form.departure, { "label": "Départ" }) }}
+    {{ form_row(form.arrival, { "label": "Arrivé" }) }}
+    {{ form_row(form.price, { "label": "Prix" }) }}
+    {% for error in errors %}
+      <div class="alert alert-warning">
+        {{ error.message }}
+      </div>
+    {% endfor %}
+    {{ form_row(form.Submit, { "attr": { "class": "btn btn-primary" } }) }}
+    {{ form_end(form) }}
+  </div>
+{% endblock body %}

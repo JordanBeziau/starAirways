@@ -14,9 +14,11 @@
       {{ form_row(form.time, {"label" : "Horaire"}) }}
       {{ form_row(form.seat, {"label" : "Nombre de places"}) }}
       {{ form_row(form.price, {"label" : "Prix"}) }}
-      <div class="form-control" {% if flight.information %}style="color: seagreen;{% endif %}">
-        {{ flight.price * 0.95 }}
-      </div>
+      {% if flight.information %}
+        <div class="form-control" style="color: seagreen;">
+          {{ flight.price * 0.95 }}
+        </div>
+      {% endif %}
       {{ form_row(form.information, { "label" : "Réduction de 5%" }) }}
       {{ form_row(form.Submit, { "attr" : { "class" : "btn btn-primary" } }) }}
       {{ form_end(form) }}

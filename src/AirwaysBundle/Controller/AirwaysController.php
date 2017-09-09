@@ -8,6 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use AirwaysBundle\Form\EditType;
+use Faker\Provider\Base;
 
 class AirwaysController extends Controller
 {
@@ -40,19 +41,24 @@ class AirwaysController extends Controller
    * @Route("admin/create", name="create")
    */
   public function createAction(Request $request) {
-    $form = $this->createForm(CreateType::class);
+    $Flight = (new Flight());
+    $form = $this->createForm(CreateType::class, $Flight);
     $form->handleRequest($request);
+    $errors = $form->getErrors();
     if ($form->isSubmitted() && $form->isValid()) {
       $data = $form->getData();
+      $data->setFlightCode(Base::regexify('[A-Z][1][0-9][0-9][0-9]'));
+      $data->setSeat(100);
       $entityManager = $this->getDoctrine()->getManager();
       $entityManager->persist($data);
       $entityManager->flush();
-      $this->addFlash("success", "La Todo a bien été créée.");
+      $this->addFlash("success", "Le vol a bien été créé.");
       return $this->redirectToRoute("admin");
     }
     return $this->render("AirwaysBundle:Default:create.html.twig",
       array(
-        "form" => $form->createView()
+        "form" => $form->createView(),
+        "errors" => $errors
       ));
   }
 
@@ -60,7 +66,6 @@ class AirwaysController extends Controller
    * @Route("/admin/edit/{id}", name="edit", requirements={"id"="\d+"})
    */
   public function editAction(Request $request, $id) {
-    # Récupérer les données
     $entityManager = $this->getDoctrine()->getManager();
     $flight = $entityManager->getRepository(Flight::class)->find($id);
     $form = $this->createForm(EditType::class, $flight);

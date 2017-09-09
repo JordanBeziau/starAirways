@@ -1,7 +1,16 @@
 {% extends "base.html.twig" %}
 {% block body %}
   <div class="container">
-    <h2 class="create-flight">🛩 Créer un nouveau vol</h2>
+    {% for message in app.flashes("success") %}
+      <div class="row">
+        <span class="alert alert-success">
+          ✅ {{ message }}
+        </span>
+      </div>
+    {% endfor %}
+    <h2 class="create-flight">
+      <a href="{{ path('create') }}" style="color: black">🛩 Créer un nouveau vol >></a>
+    </h2>
     <hr>
     <h2 class="manage-flight">🛫 Gérer les vols programmés</h2>
     <table class="table">
@@ -25,7 +34,7 @@
             <form action="{{ path('remove') }}" method="post">
               <input type="hidden" name="id" value="{{ flight.id }}">
               <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-              <button class="btn btn-danger" type="submit">Supprimer</button>
+              <button class="btn btn-danger remove-button" type="submit">Supprimer</button>
             </form>
           </td>
         </tr>

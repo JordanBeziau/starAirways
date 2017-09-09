@@ -16,6 +16,7 @@ class EditType extends AbstractType {
       ->add("time", TimeType::class,
           array(
             "widget" => "choice",
+            "hours" => range(6, 21)
           ))
       ->add("seat", IntegerType::class)
       ->add("price", IntegerType::class)

@@ -3,6 +3,7 @@
 namespace AirwaysBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Flight
@@ -60,6 +61,8 @@ class Flight
      * @var int
      *
      * @ORM\Column(name="price", type="integer")
+     * @Assert\LessThanOrEqual(value=300, message="Le prix doit être compris entre 100 et 300")
+     * @Assert\GreaterThanOrEqual(value=100, message="Le prix doit être compris entre 100 et 300")
      */
     private $price;
 
@@ -75,7 +78,15 @@ class Flight
      *
      * @ORM\Column(name="alert", type="boolean")
      */
-    private $alert;
+    private $alert = false;
+
+  /**
+   * @return bool
+   * @Assert\IsTrue(message="Les villes de départ et d'arrivée doivent être différentes.")
+   */
+  public function isDepartureDifferentThanArrival() {
+    return $this->arrival != $this->departure;
+    }
 
 
     /**
